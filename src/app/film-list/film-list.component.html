@@ -1,0 +1,15 @@
+<h1>Films a voir aujourd'hui</h1>
+<h4>{{ datejour | date: "dd/mmmm" }}</h4>
+<ul>
+  <li *ngFor="let t of Films">
+    <app-film [titre]="t.titre" [dure]="t.duree" [img]="t.affiche"></app-film>
+  </li>
+</ul>
+Donner la duree minimale du film
+<input
+  type="text"
+  #txt
+  (keyup)="nombre(txt.value)"
+  (keyup)="txt(txt.value)"
+/><br />
+il ya {{ nb }} films ayant une durée > {{ x }} min.
